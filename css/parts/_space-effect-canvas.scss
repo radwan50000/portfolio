@@ -1,0 +1,39 @@
+#canvasContainer{
+    position: relative;
+    z-index: 1;
+    width: fit-content;
+    height: fit-content;
+
+    &::after{
+        content: 'Game Over';
+        position: absolute;
+        font-family: "VT323", monospace;
+        top: 50%;
+        left: 50%;
+        z-index: 9999;
+        color: white;
+        width: fit-content;
+        height: fit-content;
+        font-size: 6rem;
+        letter-spacing: 5px;
+        transform: translate(-50%,-50%);
+        animation: canvasTitleFade 1.5s infinite alternate;
+    }
+
+    canvas#space-effect {
+        width: 100%;
+        background-color: black;
+        overflow: hidden;
+        margin: 9rem 0px;
+    }
+
+}
+
+@keyframes canvasTitleFade{
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}

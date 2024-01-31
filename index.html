@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap"
+            rel="stylesheet">
+        <link
+            href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Iceland&family=Londrina+Outline&display=swap"
+            rel="stylesheet">
+        <link
+            href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Diphylleia&display=swap"
+            rel="stylesheet">
+        <link rel="icon" href="./images/logo.ico">
+        <link rel="stylesheet" href="./css/main.css">
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Muhammed-Elsayed</title>
+    </head>
+    <body id="body">
+        <header>
+            <a href="./index.html">
+                <img src="./images/logo1.jpg" alt>
+            </a>
+            <ul id="headerLists">
+                <li>skills</li>
+                <li>projects</li>
+                <li>about</li>
+                <li>contact us</li>
+            </ul>
+        </header>
+        <div id="info-part">
+            <div id="logo">
+                <div id="pumbDiv1"></div>
+                <div id="pumbDiv2"></div>
+                <img src="./images/logo1.jpg" alt="Logo-PNG">
+            </div>
+            <div id="info-part-seperator">
+
+            </div>
+            <div id="name">
+                <h1>Muhammed</h1>
+                <h2>Elsayed</h2>
+            </div>
+        </div>
+        <div id="canvasContainer">
+            <canvas id="space-effect"></canvas>
+            
+        </div>
+
+        <main>
+            <section id="skills-section">
+                <h1 class="section-header">
+                    Skills
+                    <hr>
+                </h1>
+                <div id="skills-container">
+                    <div class="skill">
+                        <h3>
+                            Front End Developer
+                        </h3>
+                        <p>
+                            Can make a sites with front end technologies like <span class="span-glow"> HTML </span> , <span class="span-glow">CSS</span> , <span class="span-glow">SASS</span> , <span class="span-glow">javascript</span> , <span class="span-glow">Vue.js</span> . Like making portfolio site or landing page or Interface to shop with good structure and clean code .
+                        </p>
+                    </div>
+                    <div class="skill">
+                        <h3>
+                            Relational Database
+                        </h3>
+                        <p>
+                            Create simple relational database of program using <span class="span-glow">SQL</span> language .
+                        </p>
+                    </div>
+                    <div class="skill">
+                        <h3>
+                            Desktop Developer
+                        </h3>
+                        <p>
+                            Create Simple Desktop Application using <span class="span-glow">Java</span> & <span class="span-glow">Python</span> .
+                        </p>
+                    </div>
+                </div>
+                <div id="slider-container">
+                    <div class="slider">
+                        <img src="./images/html-5.png" alt="html-Lang">
+                        <img src="./images/css-3.png" alt="css-Lang">
+                        <img src="./images/js.png" alt="javascript-Lang">
+                        <img src="./images/sass.png" alt="sass-Lang">
+                        <img src="./images/vue.webp" alt="vue.js">
+                        <img src="./images/gnu-bash.png" alt="Bash-Lang">
+                        <img src="./images/java.png" alt="java-Lang">
+                        <img src="./images/python.png" alt="python-Lang">
+                        <img src="./images/sql-server.png" alt="sql-language">
+                    </div>
+                    <div class="slider">
+                        <img src="./images/html-5.png" alt="html-Lang">
+                        <img src="./images/css-3.png" alt="css-Lang">
+                        <img src="./images/js.png" alt="javascript-Lang">
+                        <img src="./images/sass.png" alt="sass-Lang">
+                        <img src="./images/vue.webp" alt="vue.js">
+                        <img src="./images/gnu-bash.png" alt="Bash-Lang">
+                        <img src="./images/java.png" alt="java-Lang">
+                        <img src="./images/python.png" alt="python-Lang">
+                        <img src="./images/sql-server.png" alt="sql-language">
+                    </div>
+                </div>
+            </section>
+            <section id="projects-section">
+                <h1 class="section-header">
+                    Projects
+                    <hr>
+                </h1>
+                <div id="projects-container">
+                    <div class="image-container" v-for="(project,key) in projectSrc" key="key">
+                        <a :href="projectURL[key]" target="_blank">
+                            <img :src="project" alt="">
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <div id="upButton" @click="upButton()">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                <path
+                    d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z" />
+            </svg>
+        </div>
+        <script>
+        const { createApp } = Vue;
+        
+        let button = createApp({
+            data(){
+                return{
+                    projectSrc: [
+                        "./images/pray-project.png",
+                        "./images/xo-project.png",
+                        "./images/music-project.png",
+                        "./images/pingpong-project.png",
+                    ],projectURL: [
+                        "https://github.com/radwan50000/prayer-site",
+                        "https://github.com/radwan50000/X-O-Game",
+                        "https://github.com/radwan50000/Music-Player",
+                        "https://github.com/radwan50000/ping-pong",
+                    ]
+                }
+            },
+            methods: {
+                upButton(){
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth',
+                    });
+                }
+            }
+        }).mount('#body')
+    </script>
+        <script src="https://kit.fontawesome.com/90d5cdeb4f.js"
+            crossorigin="anonymous"></script>
+        <script src="./javascript/canvas.js"></script>
+        <script src="./javascript/main.js"></script>
+    </body>
+</html>
