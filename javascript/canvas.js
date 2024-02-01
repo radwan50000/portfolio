@@ -53,11 +53,12 @@ class Rocket{
 
     update(e) {
         this.draw();
-        if (this.x > e.pageX) {
-            this.x -= this.dx;
-        } else if (this.x < e.pageX) {
-            this.x += this.dx;
-        }
+        this.x = e.pageX;
+        // if (this.x > e.pageX) {
+        //     this.x -= this.dx;
+        // } else if (this.x < e.pageX) {
+        //     this.x += this.dx;
+        // }
     }
 }
 
@@ -67,6 +68,7 @@ let rocket = new Rocket();
 
 c.addEventListener('mousemove', function (e) {
     rocket.update(e);
+    
 })
 
 c.addEventListener('mouseenter', function (e) {
