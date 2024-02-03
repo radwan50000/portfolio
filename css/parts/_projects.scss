@@ -11,7 +11,8 @@ section#projects-section {
   }
 
   .tree {
-    box-shadow: 0px 0px 10px solid black;
+    position: absolute;
+    width: 40rem;
   }
 
   #moon-img {
@@ -26,19 +27,15 @@ section#projects-section {
   }
 
   .tree-root1 {
-    position: absolute;
     rotate: -100deg;
     top: -40rem;
     right: -40rem;
-    width: 40rem;
   }
 
   .tree-root2 {
-    position: absolute;
     rotate: 100deg;
     top: -40rem;
     left: -40rem;
-    width: 40rem;
   }
 
   & #projects-container {

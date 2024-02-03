@@ -1,7 +1,11 @@
 const c = document.getElementById("space-effect");
 
 c.width = window.innerWidth;
-c.height = window.innerHeight / 1.3;
+if (window.innerWidth > 600) {
+    c.height = window.innerHeight / 1.3;
+} else {
+    c.height = window.innerHeight * 0.5;
+}
 
 const ctx = c.getContext('2d');
 
@@ -15,19 +19,22 @@ let secondImage = '../images/monster2.png';
 let thirdImage = '../images/monster3.png';
 
 class monsterImage{
-    constructor(x,src){
+
+    constructor(x,src,sizeW,sizeH){
         this.x = x;
         this.y = getRandomNumber(600);
         this.dy = 2;
         this.src = src;
+        this.sizeW = sizeW;
+        this.sizeH = sizeH;
     }
-    
     
     draw = function () {
         let image = new Image();
         image.src = this.src;
-        ctx.drawImage(image, this.x, this.y, 20, 20);
+        ctx.drawImage(image, this.x, this.y, this.sizeW, this.sizeH);
     }
+
     update = function () {
         this.draw();
         this.y += this.dy;
@@ -39,6 +46,7 @@ class monsterImage{
 }
 
 class Rocket{
+
     constructor() {
         this.x = c.width / 2 - 40;
         this.dx = 5;
@@ -48,17 +56,11 @@ class Rocket{
         let rocket = new Image();
         rocket.src = '../images/rocket.png';
         ctx.drawImage(rocket, this.x, c.height - 100, 40, 40);
-        
     }
 
     update(e) {
-        this.draw();
         this.x = e.pageX;
-        // if (this.x > e.pageX) {
-        //     this.x -= this.dx;
-        // } else if (this.x < e.pageX) {
-        //     this.x += this.dx;
-        // }
+        this.draw();
     }
 }
 
@@ -68,23 +70,40 @@ let rocket = new Rocket();
 
 c.addEventListener('mousemove', function (e) {
     rocket.update(e);
-    
-})
+});
 
-c.addEventListener('mouseenter', function (e) {
+c.addEventListener('touchmove', function (e) {
     rocket.update(e);
-})
+});
 
-for (let i = 0; i < 4; i++){
-    monsters.push(new monsterImage(getRandomNumber(c.width),firstImage));
-}
+if (c.width > 600) {
+    let num = 4;
+    let size = 20;
+    for (let i = 0; i < num; i++){
+        monsters.push(new monsterImage(getRandomNumber(c.width),firstImage,size,size));
+    }
 
-for (let i = 0; i < 4; i++){
-    monsters.push(new monsterImage(getRandomNumber(c.width),secondImage));
-}
+    for (let i = 0; i < num; i++){
+        monsters.push(new monsterImage(getRandomNumber(c.width),secondImage,size,size));
+    }
 
-for (let i = 0; i < 4; i++){
-    monsters.push(new monsterImage(getRandomNumber(c.width),thirdImage));
+    for (let i = 0; i < num; i++){
+        monsters.push(new monsterImage(getRandomNumber(c.width),thirdImage,size,size));
+    }
+} else {
+    let num = 2;
+    let size = 15;
+    for (let i = 0; i < num; i++){
+        monsters.push(new monsterImage(getRandomNumber(c.width),firstImage,size,size));
+    }
+
+    for (let i = 0; i < num; i++){
+        monsters.push(new monsterImage(getRandomNumber(c.width),secondImage,size,size));
+    }
+
+    for (let i = 0; i < num; i++){
+        monsters.push(new monsterImage(getRandomNumber(c.width),thirdImage,size,size));
+    }
 }
 
 

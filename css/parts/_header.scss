@@ -15,6 +15,9 @@ header {
     border-radius: 50%;
     border-radius: 50%;
     transition: 0.1s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     &:hover {
       border: 3px solid #ebc934;
@@ -91,7 +94,7 @@ header {
     margin: 0px 5rem;
   }
 
-  div#name {
+  & div#name {
     letter-spacing: 5px;
     font-family: "Iceland", sans-serif;
     letter-spacing: 3px;
@@ -120,7 +123,10 @@ header {
   }
 
   div#logo {
+    $size: 20rem;
     position: relative;
+    width: $size;
+    height: $size;
 
     & #pumbDiv1 {
       position: absolute;
@@ -149,7 +155,6 @@ header {
     }
 
     & img {
-      $size: 20rem;
       border-radius: 50%;
       width: $size;
       height: $size;

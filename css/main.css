@@ -50,6 +50,9 @@ header a img {
   border-radius: 50%;
   border-radius: 50%;
   transition: 0.1s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 header a img:hover {
   border: 3px solid #ebc934;
@@ -140,6 +143,8 @@ header ul#headerLists li:not(:last-child) {
 }
 #info-part div#logo {
   position: relative;
+  width: 20rem;
+  height: 20rem;
 }
 #info-part div#logo #pumbDiv1 {
   position: absolute;
@@ -339,7 +344,8 @@ section#projects-section h1 {
   color: white;
 }
 section#projects-section .tree {
-  box-shadow: 0px 0px 10px solid black;
+  position: absolute;
+  width: 40rem;
 }
 section#projects-section #moon-img {
   position: absolute;
@@ -351,18 +357,14 @@ section#projects-section #moon-img {
   border-radius: 50%;
 }
 section#projects-section .tree-root1 {
-  position: absolute;
   rotate: -100deg;
   top: -40rem;
   right: -40rem;
-  width: 40rem;
 }
 section#projects-section .tree-root2 {
-  position: absolute;
   rotate: 100deg;
   top: -40rem;
   left: -40rem;
-  width: 40rem;
 }
 section#projects-section #projects-container {
   width: 90%;
@@ -389,4 +391,107 @@ section#projects-section #projects-container .image-container:hover {
 section#projects-section #projects-container .image-container img {
   width: 100%;
   height: 100%;
+}
+
+@media (max-width: 600px) {
+  header {
+    padding: 10px 10px !important;
+  }
+  header a img {
+    width: 40px !important;
+    height: 40px !important;
+  }
+  header ul#headerLists li {
+    font-size: 16px !important;
+  }
+  header ul#headerLists li:not(:last-child) {
+    margin-right: 1rem !important;
+  }
+  #info-part {
+    padding: 3rem 0rem 0rem 1rem;
+  }
+  #info-part div#name h1 {
+    font-size: 2.5rem !important;
+  }
+  #info-part div#name h1::first-letter {
+    font-size: 4rem !important;
+  }
+  #info-part div#name h2 {
+    font-size: 2.5rem;
+    font-family: inherit;
+  }
+  #info-part div#name h2::first-letter {
+    font-size: 3.5rem;
+    color: #d9bc3b;
+  }
+  #info-part div#info-part-seperator {
+    width: 5px !important;
+    height: 15vh !important;
+    margin: 0px 1rem;
+  }
+  #info-part div#logo {
+    width: 6rem;
+    height: 6rem;
+  }
+  #info-part div#logo img {
+    width: 6rem !important;
+    height: 6rem !important;
+  }
+}
+@media (max-width: 600px) {
+  #canvasContainer {
+    width: -moz-fit-content;
+    width: fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  #canvasContainer::after {
+    font-size: 2rem;
+    letter-spacing: 5px;
+  }
+  #canvasContainer canvas#space-effect {
+    width: 100vw;
+    background-color: black;
+    overflow: hidden;
+    margin: 3rem 0px;
+  }
+}
+@media (max-width: 600px) {
+  h1.section-header {
+    font-size: 3rem;
+  }
+  main section#skills-section #skills-container {
+    width: 90%;
+  }
+  main section#skills-section #skills-container div.skill {
+    width: 80%;
+  }
+  main section#skills-section #skills-container div.skill:not(:last-child) {
+    margin-bottom: 100px;
+  }
+  main section#skills-section #slider-container {
+    width: 100%;
+  }
+  main section#skills-section #slider-container .slider img {
+    width: 30px;
+    height: 30px;
+    margin: 15px 40px;
+  }
+}
+@media (max-width: 600px) {
+  section#projects-section {
+    padding-top: 10rem;
+  }
+  section#projects-section .tree {
+    width: 34rem;
+  }
+  section#projects-section #projects-container {
+    width: 100%;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  section#projects-section #projects-container .image-container {
+    width: 30rem;
+    height: 15rem;
+  }
 }/*# sourceMappingURL=main.css.map */
