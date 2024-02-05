@@ -204,26 +204,9 @@ header ul#headerLists li:not(:last-child) {
   height: -moz-fit-content;
   height: fit-content;
 }
-#canvasContainer::after {
-  content: "Game Over";
-  position: absolute;
-  font-family: "VT323", monospace;
-  top: 50%;
-  left: 50%;
-  z-index: 9999;
-  color: white;
-  width: -moz-fit-content;
-  width: fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  font-size: 6rem;
-  letter-spacing: 5px;
-  transform: translate(-50%, -50%);
-  animation: canvasTitleFade 1.5s infinite alternate;
-}
 #canvasContainer canvas#space-effect {
   width: 100%;
-  background-color: black;
+  background-color: #000000;
   overflow: hidden;
   margin: 9rem 0px;
 }
