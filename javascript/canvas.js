@@ -89,7 +89,7 @@ class Bullet {
 
 changeBullet = function () {
   bulletNo++;
-  if (bullets.length > 6) {
+  if (bullets.length > 20) {
     bullets = [];
     bulletNo = 0;
   }

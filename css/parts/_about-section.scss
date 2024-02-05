@@ -1,0 +1,39 @@
+#about-section {
+  width: 100%;
+  height: fit-content;
+  padding: 70px 0px;
+  background-color: #38415a;
+
+  & #about-header {
+    font-weight: bold;
+    color: white;
+    width: 60%;
+    font-size: 6rem;
+    height: fit-content;
+    margin: 0px auto;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+  }
+
+  & div#about-container {
+    width: 60%;
+    margin: 0px auto;
+    text-align: start;
+    font-size: 20px;
+    color: white;
+
+    & p {
+      width: 80%;
+    }
+  }
+}
+
+@keyframes gear_animation {
+  0% {
+    rotate: 0deg;
+  }
+  100% {
+    rotate: 360deg;
+  }
+}

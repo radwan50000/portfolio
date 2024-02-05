@@ -44,7 +44,7 @@
         </div>
         <div id="canvasContainer">
             <canvas id="space-effect"></canvas>
-            
+
         </div>
 
         <main>
@@ -59,7 +59,14 @@
                             Front End Developer
                         </h3>
                         <p>
-                            Can make a sites with front end technologies like <span class="span-glow"> HTML </span> , <span class="span-glow">CSS</span> , <span class="span-glow">SASS</span> , <span class="span-glow">javascript</span> , <span class="span-glow">Vue.js</span> . Like making portfolio site or landing page or Interface to shop with good structure and clean code .
+                            Can make a sites with front end technologies like
+                            <span class="span-glow"> HTML </span> , <span
+                                class="span-glow">CSS</span> , <span
+                                class="span-glow">SASS</span> , <span
+                                class="span-glow">javascript</span> , <span
+                                class="span-glow">Vue.js</span> . Like making
+                            portfolio site or landing page or Interface to shop
+                            with good structure and clean code .
                         </p>
                     </div>
                     <div class="skill">
@@ -67,7 +74,8 @@
                             Relational Database
                         </h3>
                         <p>
-                            Create simple relational database of program using <span class="span-glow">SQL</span> language .
+                            Create simple relational database of program using
+                            <span class="span-glow">SQL</span> language .
                         </p>
                     </div>
                     <div class="skill">
@@ -75,7 +83,9 @@
                             Desktop Developer
                         </h3>
                         <p>
-                            Create Simple Desktop Application using <span class="span-glow">Java</span> & <span class="span-glow">Python</span> .
+                            Create Simple Desktop Application using <span
+                                class="span-glow">Java</span> & <span
+                                class="span-glow">Python</span> .
                         </p>
                     </div>
                 </div>
@@ -108,19 +118,47 @@
                 </div>
             </section>
             <section id="projects-section">
-                <img src="./images/tree5.png" alt="tree-image" class="tree-root1 tree" id="tree-1">
-                <img src="./images/tree5.png" alt="tree-image" class="tree-root2 tree" id="tree-1-rev">
+                <img src="./images/tree5.png" alt="tree-image"
+                    class="tree-root1 tree" id="tree-1">
+                <img src="./images/tree5.png" alt="tree-image"
+                    class="tree-root2 tree" id="tree-1-rev">
                 <img src="./images/moon.png" alt="moon-image" id="moon-img">
                 <h1 class="section-header">
                     Projects
                     <hr>
                 </h1>
                 <div id="projects-container">
-                    <div class="image-container" v-for="(project,key) in projectSrc" key="key">
+                    <div class="image-container"
+                        v-for="(project,key) in projectSrc" key="key">
                         <a :href="projectURL[key]" target="_blank">
-                            <img :src="project" alt="">
+                            <img :src="project" alt>
                         </a>
                     </div>
+                </div>
+            </section>
+            <section id="about-section">
+                <h1 id="about-header">
+                    About Me
+                </h1>
+                <div id="about-container">
+                    <p>
+                        Hello! I'm Muhammed, a {{date }}-year-old front-end
+                        developer
+                        with a passion for creating visually appealing and
+                        user-friendly websites. I specialize in HTML , CSS ,
+                        SCSS , VUE.JS and
+                        JavaScript, and I love turning design concepts into
+                        functional and interactive web pages. Additionally, I
+                        have experience in developing simple relational
+                        databases, allowing for efficient data management and
+                        retrieval. I'm also adept at building desktop
+                        applications using Java and Python, utilizing their
+                        robust libraries and frameworks. I'm constantly seeking
+                        new challenges and opportunities to expand my skills and
+                        deliver high-quality solutions to meet user needs. Let's
+                        collaborate and bring your ideas to life!.
+                    </p>
+
                 </div>
             </section>
         </main>
@@ -147,7 +185,8 @@
                         "https://github.com/radwan50000/X-O-Game",
                         "https://github.com/radwan50000/Music-Player",
                         "https://github.com/radwan50000/ping-pong",
-                    ]
+                    ],
+                    date: new Date().getFullYear() - 2002,
                 }
             },
             methods: {

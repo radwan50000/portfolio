@@ -3,7 +3,7 @@ section#projects-section {
   overflow: hidden;
   position: relative;
   border-top: 10px solid #6eb62e;
-  border-bottom: 10px solid #6eb62e;
+  border-bottom: 10px solid #aaaaaa;
   background-color: #12123a;
 
   & h1 {
@@ -39,6 +39,7 @@ section#projects-section {
   }
 
   & #projects-container {
+    position: relative;
     $width: 90%;
     width: $width;
     height: fit-content;
@@ -47,6 +48,7 @@ section#projects-section {
     justify-content: space-evenly;
     align-items: center;
     flex-wrap: wrap;
+    z-index: 2;
 
     .image-container {
       $size: 36rem;
