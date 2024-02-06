@@ -1,4 +1,5 @@
 const c = document.getElementById("space-effect"),
+  ctx = c.getContext("2d"),
   firstImage = "../images/monster.png",
   secondImage = "../images/monster2.png",
   thirdImage = "../images/monster3.png";
@@ -11,8 +12,6 @@ if (window.innerWidth > 600) {
 } else {
   c.height = window.innerHeight * 0.5;
 }
-
-const ctx = c.getContext("2d");
 
 function getRandomNumber(max) {
   return Math.floor(Math.random() * (max - 20 + 1)) + 20;
@@ -71,6 +70,11 @@ class Bullet {
   }
 
   draw = function () {
+    if (this.y >= -200) {
+      this.dy = -10;
+    } else {
+      this.dy = 0;
+    }
     this.y += this.dy;
     let rocket = new Image();
     rocket.src = "../images/fire.png";
@@ -79,41 +83,14 @@ class Bullet {
 
   updateBullet = function (e) {
     this.x = e.pageX;
-    if (this.y > -10) {
-      this.dy = -15;
-    } else {
-      this.dy = 0;
-    }
   };
 }
-
-changeBullet = function () {
-  bulletNo++;
-  if (bullets.length > 20) {
-    bullets = [];
-    bulletNo = 0;
-  }
-  bullets.push(new Bullet());
-  return bulletNo;
-};
 
 let monsters = [];
 
 let bullets = [new Bullet()];
 
 let rocket = new Rocket();
-
-c.addEventListener("mousemove", function (e) {
-  rocket.update(e);
-});
-
-c.addEventListener("touchmove", function (e) {
-  rocket.update(e);
-});
-
-c.addEventListener("click", function (e) {
-  bullets[changeBullet()].updateBullet(e);
-});
 
 if (c.width > 600) {
   let num = 4;
@@ -151,17 +128,48 @@ if (c.width > 600) {
   }
 }
 
-function canvasAnimate() {
+(function canvasAnimate() {
+  //Main Animation Setting
   requestAnimationFrame(canvasAnimate);
   ctx.clearRect(0, 0, c.width, c.height);
 
+  //Adding Elements To Canvas
   for (let i = 0; i < monsters.length; i++) {
     monsters[i].update();
+    if (
+      monsters[i].x - 20 <= bullets[bulletNo].x &&
+      monsters[i].x + 20 >= bullets[bulletNo].x &&
+      monsters[i].y - 10 <= bullets[bulletNo].y &&
+      monsters[i].y + 10 >= bullets[bulletNo].y
+    ) {
+      monsters[i].y = -80;
+      bullets[bulletNo].y = -200;
+    }
   }
 
   bullets[bulletNo].draw();
 
   rocket.draw();
-}
+})();
 
-canvasAnimate();
+changeBullet = function () {
+  bulletNo++;
+  if (bullets.length > 50) {
+    bullets = [];
+    bulletNo = 0;
+  }
+  bullets.push(new Bullet());
+  return bulletNo;
+};
+
+c.addEventListener("mousemove", function (e) {
+  rocket.update(e);
+});
+
+c.addEventListener("touchmove", function (e) {
+  rocket.update(e);
+});
+
+c.addEventListener("click", function (e) {
+  bullets[changeBullet()].updateBullet(e);
+});
