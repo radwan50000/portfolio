@@ -383,27 +383,73 @@ section#projects-section #projects-container .image-container img {
   width: 100%;
   height: -moz-fit-content;
   height: fit-content;
-  padding: 70px 0px;
-  background-color: #38415a;
+  padding: 70px 0px 0px 0px;
+  background-color: #000000;
 }
-#about-section #about-header {
+#about-section #about-icon-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 10%;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin: 0px auto;
+}
+#about-section #about-icon-container img {
+  filter: invert(100%);
+  width: 1.2rem;
+  cursor: pointer;
+}
+#about-section .about-header {
   font-weight: bold;
-  color: white;
+  color: rgb(255, 215, 0);
   width: 60%;
-  font-size: 6rem;
+  line-height: 80%;
+  font-size: 8rem;
   height: -moz-fit-content;
   height: fit-content;
   margin: 0px auto;
   display: flex;
-  justify-content: start;
-  align-items: start;
+  justify-content: center;
+  align-items: center;
+  color: #ebc644;
 }
 #about-section div#about-container {
-  width: 60%;
-  margin: 0px auto;
+  position: relative;
+  background-color: #ebc644;
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin-top: 400px;
   text-align: start;
   font-size: 20px;
   color: white;
+  overflow: clip;
+  overflow-y: visible;
+  z-index: 3;
+}
+#about-section div#about-container div#text-about-container {
+  padding: 0px 0px 5% 5%;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: 60%;
+}
+#about-section div#about-container div#text-about-container h1 {
+  font-size: 3rem;
+  color: black;
+}
+#about-section div#about-container div#text-about-container h2 {
+  font-size: 1.3rem;
+}
+#about-section div#about-container svg {
+  position: absolute;
+  width: 170%;
+  top: -80%;
+  left: -45%;
+  z-index: -1;
+}
+#about-section div#about-container svg path {
+  fill: #ebc644;
 }
 #about-section div#about-container p {
   width: 80%;

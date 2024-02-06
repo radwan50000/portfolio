@@ -138,7 +138,7 @@ if (c.width > 600) {
     monsters[i].update();
     if (
       monsters[i].x - 20 <= bullets[bulletNo].x &&
-      monsters[i].x + 20 >= bullets[bulletNo].x &&
+      monsters[i].x + 10 >= bullets[bulletNo].x &&
       monsters[i].y - 10 <= bullets[bulletNo].y &&
       monsters[i].y + 10 >= bullets[bulletNo].y
     ) {
