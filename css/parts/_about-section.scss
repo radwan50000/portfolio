@@ -3,6 +3,8 @@
   height: fit-content;
   padding: 70px 0px 0px 0px;
   background-color: #000000;
+  border-bottom: 5px solid white;
+  overflow: hidden;
 
   & #about-icon-container {
     display: flex;
@@ -35,53 +37,61 @@
 
   & div#about-container {
     position: relative;
+    display: flex;
+    justify-content: space-between;
     background-color: #ebc644;
     width: 100%;
     height: fit-content;
-    margin-top: 400px;
     text-align: start;
     font-size: 20px;
     color: white;
     overflow: clip;
     overflow-y: visible;
-    z-index: 3;
+    z-index: 0;
+    padding: 0px 5% 0% 5%;
+    background-color: black;
 
-    & div#text-about-container {
-      padding: 0px 0px 5% 5%;
-      height: fit-content;
-      width: 60%;
-      h1 {
-        font-size: 3rem;
-        color: black;
-      }
-      h2 {
-        font-size: 1.3rem;
-      }
+    // & div#text-about-container {
+    //   height: fit-content;
+    //   width: 60%;
+    //   margin-top: 300px;
+    //   background-color: transparent;
+    //   border-radius: 50% 50% 0% 0%;
+    // }
+
+    h1 {
+      font-size: 3rem;
+      color: black;
     }
-
-    & svg {
-      position: absolute;
-      width: 170%;
-      top: -80%;
-      left: -45%;
-      z-index: -1;
-
-      & path {
-        fill: #ebc644;
-      }
+    h2 {
+      font-size: 1.3rem;
     }
 
     & p {
       width: 80%;
+      height: fit-content;
     }
   }
 }
 
-@keyframes gear_animation {
-  0% {
-    rotate: 0deg;
-  }
-  100% {
-    rotate: 360deg;
-  }
+#text-about-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  rotate: 180deg;
+  overflow: hidden;
+  line-height: 0;
+}
+
+#text-about-container svg {
+  position: relative;
+  display: block;
+  width: calc(174% + 1.3px);
+  height: 198px;
+  transform: rotateY(180deg);
+}
+
+#text-about-container .shape-fill {
+  fill: #ffffff;
 }

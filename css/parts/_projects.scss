@@ -3,8 +3,11 @@ section#projects-section {
   overflow: hidden;
   position: relative;
   border-top: 10px solid #6eb62e;
-  border-bottom: 10px solid #aaaaaa;
-  background-color: #12123a;
+  border-bottom: 10px solid #ffffff;
+  background-color: black;
+  background-image: url("../../images/sky-background.jpg");
+  background-position: right center;
+  background-size: cover;
 
   & h1 {
     color: white;
@@ -20,10 +23,9 @@ section#projects-section {
     top: -8rem;
     left: 50%;
     transform: translateX(-50%);
-    $size: 11rem;
+    $size: 13rem;
     width: $size;
     height: $size;
-    border-radius: 50%;
   }
 
   .tree-root1 {
@@ -40,34 +42,145 @@ section#projects-section {
 
   & #projects-container {
     position: relative;
-    $width: 90%;
+    $width: 100%;
     width: $width;
     height: fit-content;
-    margin: 40px auto;
+    padding: 40px 0px;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     z-index: 2;
+    overflow: hidden;
+    //Pray Icons
+    & img#project-1-UR {
+      top: -30%;
+      right: 10%;
+    }
+    & img#project-1-UL {
+      top: -30%;
+      left: 15%;
+    }
 
-    .image-container {
-      $size: 36rem;
-      width: $size;
-      height: $size / 2;
-      border: 2px solid black;
-      margin: 20px;
-      cursor: pointer;
-      margin-bottom: 6rem;
-      transition: 0.4s;
+    & img#project-1-BR {
+      bottom: 10%;
+      right: -30%;
+    }
 
-      &:hover {
-        box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.591);
+    & img#project-1-BL {
+      bottom: 30%;
+      left: -30%;
+    }
+    //Games Icons
+    & img#project-2-UR {
+      top: -30%;
+      right: 10%;
+    }
+    & img#project-2-UL {
+      top: -30%;
+      left: 15%;
+    }
+
+    & img#project-2-BR {
+      bottom: 10%;
+      right: -30%;
+    }
+
+    & img#project-2-BL {
+      bottom: 30%;
+      left: -30%;
+    }
+
+    & div#active-slider {
+      position: relative;
+      width: 80%;
+      height: fit-content;
+      margin: 50px 0px;
+
+      & span#right-slider-button {
+        top: 50%;
+        right: 0%;
+        transform: translate(100%, -50%);
+
+        & img {
+          rotate: 180deg;
+        }
       }
 
-      & img {
+      & span#left-slider-button {
+        top: 50%;
+        border-radius: 50% 0px 0px 50%;
+        left: 0%;
+        transform: translate(-100%, -50%);
+
+        & img {
+          rotate: 0deg;
+        }
+      }
+
+      & span.slider-button {
+        position: absolute;
+        width: fit-content;
+        height: 10%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 999;
+        background-color: rgba(255, 255, 255, 0.466);
+        border-radius: 0px 50% 50% 0%;
+        cursor: pointer;
+
+        & img {
+          width: 20px;
+        }
+      }
+
+      & img#active-image-slider {
         width: 100%;
-        height: 100%;
       }
     }
   }
+}
+
+img.slider-decoration {
+  width: 100px;
+  position: absolute;
+  z-index: 9999;
+  transition: 0.4s;
+}
+
+@keyframes image-fade-1 {
+  0% {
+    opacity: 0%;
+  }
+
+  100% {
+    opacity: 100%;
+  }
+}
+
+@keyframes image-fade-2 {
+  0% {
+    opacity: 0%;
+  }
+
+  100% {
+    opacity: 100%;
+  }
+}
+
+.active-icon-TR {
+  top: 0% !important;
+}
+
+.active-icon-TL {
+  top: 0% !important;
+}
+
+.active-icon-BR {
+  right: 3% !important;
+}
+
+.active-icon-BL {
+  left: 3% !important;
 }

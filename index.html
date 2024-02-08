@@ -128,11 +128,38 @@
                     <hr>
                 </h1>
                 <div id="projects-container">
-                    <div class="image-container"
-                        v-for="(project,key) in projectSrc" key="key">
-                        <a :href="projectURL[key]" target="_blank">
-                            <img :src="project" alt>
-                        </a>
+                    <!--Pray Icons-->
+                    <img src="./images/pray project/lantern.png" alt
+                        id="project-1-UR" class="slider-decoration">
+                    <img src="./images/pray project/decoration.png" alt
+                        id="project-1-UL" class="slider-decoration">
+                    <img src="./images/pray project/tasbih.png" alt
+                        id="project-1-BR" class="slider-decoration">
+                    <img src="./images/pray project/mosque.png" alt
+                        id="project-1-BL" class="slider-decoration">
+
+                    <!--Games Icons-->
+                    <img src="./images/games project/3d-dice.png" alt
+                        id="project-2-UR" class="slider-decoration">
+                    <img src="./images/games project/card-game.png" alt
+                        id="project-2-UL" class="slider-decoration">
+                    <img src="./images/games project/game.png" alt
+                        id="project-2-BR" class="slider-decoration">
+                    <img src="./images/games project/ghost.png" alt
+                        id="project-2-BL" class="slider-decoration">
+                    <div id="active-slider">
+
+                        <img src="./images/pray-project.png"
+                            alt="Islamic Pray Time Site"
+                            id="active-image-slider">
+                        <span id="right-slider-button"
+                            class="slider-button">
+                            <img src="./images/left-arrow.png" alt="left arrow">
+                        </span>
+                        <span id="left-slider-button"
+                            class="slider-button">
+                            <img src="./images/left-arrow.png" alt="left arrow">
+                        </span>
                     </div>
                 </div>
             </section>
@@ -147,30 +174,34 @@
                 <h1 class="about-header">Elsayed</h1>
                 <div id="about-container">
                     <div id="text-about-container">
-                        <h1>
-                            Hello,I'm Muhammed.
-                        </h1>
-                        <h2>
-                            A {{date}}-year-old front-end developer with a
-                            passion for creating visually appealing and
-                            user-friendly websites. I specialize in HTML, CSS,
-                            and JavaScript, and I love turning design concepts
-                            into functional and interactive web pages.
-                            Additionally, I have experience in developing simple
-                            relational databases, allowing for efficient data
-                            management and retrieval. I'm also adept at building
-                            desktop applications using Java and Python,
-                            utilizing their robust libraries and frameworks. I'm
-                            constantly seeking new challenges and opportunities
-                            to expand my skills and deliver high-quality
-                            solutions to meet user needs. Let's collaborate and
-                            bring your ideas to life!.
-                        </h2>
+                        <svg data-name="Layer 1"
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 1200 120" preserveAspectRatio="none">
+                            <path
+                                d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+                                class="shape-fill"></path>
+                        </svg>
+
                     </div>
-                    <svg xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 1440 320"><path fill="#ffd700"
-                            fill-opacity="1"
-                            d="M0,160L48,160C96,160,192,160,288,138.7C384,117,480,75,576,96C672,117,768,203,864,202.7C960,203,1056,117,1152,117.3C1248,117,1344,203,1392,245.3L1440,288L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
+                    <h1>
+                        Hello,I'm Muhammed.
+                    </h1>
+                    <h2>
+                        A {{date}}-year-old front-end developer with a
+                        passion for creating visually appealing and
+                        user-friendly websites. I specialize in HTML, CSS,
+                        and JavaScript, and I love turning design concepts
+                        into functional and interactive web pages.
+                        Additionally, I have experience in developing simple
+                        relational databases, allowing for efficient data
+                        management and retrieval. I'm also adept at building
+                        desktop applications using Java and Python,
+                        utilizing their robust libraries and frameworks. I'm
+                        constantly seeking new challenges and opportunities
+                        to expand my skills and deliver high-quality
+                        solutions to meet user needs. Let's collaborate and
+                        bring your ideas to life!
+                    </h2>
                 </div>
 
             </section>
@@ -188,12 +219,7 @@
         let button = createApp({
             data(){
                 return{
-                    projectSrc: [
-                        "./images/pray-project.png",
-                        "./images/xo-project.png",
-                        "./images/music-project.png",
-                        "./images/pingpong-project.png",
-                    ],projectURL: [
+                    projectURL: [
                         "https://github.com/radwan50000/prayer-site",
                         "https://github.com/radwan50000/X-O-Game",
                         "https://github.com/radwan50000/Music-Player",
@@ -212,6 +238,7 @@
         <script src="https://kit.fontawesome.com/90d5cdeb4f.js"
             crossorigin="anonymous"></script>
         <script src="./javascript/canvas.js"></script>
+        <script src="./javascript/slider.js"></script>
         <script src="./javascript/main.js"></script>
     </body>
 </html>
