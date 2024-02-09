@@ -21,6 +21,12 @@ let right_slider_button = document.getElementById("right-slider-button"),
     document.getElementById("project-2-BR"),
     document.getElementById("project-2-BL"),
   ],
+  third_project_images = [
+    document.getElementById("project-3-UR"),
+    document.getElementById("project-3-UL"),
+    document.getElementById("project-3-BR"),
+    document.getElementById("project-3-BL"),
+  ],
   counter = 0;
 
 function changeIcons() {
@@ -28,8 +34,11 @@ function changeIcons() {
     for (let i = 0; i < first_project_images.length; i++) {
       first_project_images[i].classList.add(`active-icon-${direction[i]}`);
     }
-    for (let i = 0; i < first_project_images.length; i++) {
+    for (let i = 0; i < second_project_images.length; i++) {
       second_project_images[i].classList.remove(`active-icon-${direction[i]}`);
+    }
+    for (let i = 0; i < third_project_images.length; i++) {
+      third_project_images[i].classList.remove(`active-icon-${direction[i]}`);
     }
   } else if (counter == 1 || counter == 3) {
     for (let i = 0; i < first_project_images.length; i++) {
@@ -37,6 +46,19 @@ function changeIcons() {
     }
     for (let i = 0; i < first_project_images.length; i++) {
       second_project_images[i].classList.add(`active-icon-${direction[i]}`);
+    }
+    for (let i = 0; i < third_project_images.length; i++) {
+      third_project_images[i].classList.remove(`active-icon-${direction[i]}`);
+    }
+  }else{
+    for (let i = 0; i < first_project_images.length; i++) {
+      first_project_images[i].classList.remove(`active-icon-${direction[i]}`);
+    }
+    for (let i = 0; i < first_project_images.length; i++) {
+      second_project_images[i].classList.remove(`active-icon-${direction[i]}`);
+    }
+    for (let i = 0; i < third_project_images.length; i++) {
+      third_project_images[i].classList.add(`active-icon-${direction[i]}`);
     }
   }
 }

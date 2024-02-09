@@ -400,6 +400,22 @@ section#projects-section #projects-container img#project-2-BL {
   bottom: 30%;
   left: -30%;
 }
+section#projects-section #projects-container img#project-3-UR {
+  top: -30%;
+  right: 10%;
+}
+section#projects-section #projects-container img#project-3-UL {
+  top: -30%;
+  left: 15%;
+}
+section#projects-section #projects-container img#project-3-BR {
+  bottom: 10%;
+  right: -30%;
+}
+section#projects-section #projects-container img#project-3-BL {
+  bottom: 30%;
+  left: -30%;
+}
 section#projects-section #projects-container div#active-slider {
   position: relative;
   width: 80%;
