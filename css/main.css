@@ -652,7 +652,7 @@ img.slider-decoration {
 #about-section div#about-container div#details div#cars-div img#police-helicopter {
   rotate: 20deg;
   margin-bottom: 20px;
-  animation: helicopter_move 10s linear 3s infinite forwards;
+  animation: helicopter_move 10s linear 2.5s infinite forwards;
 }
 #about-section div#about-container div#details h1 {
   position: relative;
