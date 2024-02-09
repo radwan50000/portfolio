@@ -29,6 +29,13 @@ let right_slider_button = document.getElementById("right-slider-button"),
   ],
   counter = 0;
 
+
+for(let i = 0 ;i < projectSrc.length ; i++){
+  let parent = document.getElementById("project-number");
+  let span = document.createElement("span");
+  parent.appendChild(span);
+}
+
 function changeIcons() {
   if (counter == 0) {
     for (let i = 0; i < first_project_images.length; i++) {
@@ -63,6 +70,16 @@ function changeIcons() {
   }
 }
 
+function change_project_number(){
+  let spans = document.querySelectorAll("#project-number span");
+  for(let i = 0 ; i < spans.length ; i++){
+    console.log(spans[i].classList)
+    i == counter ? spans[i].classList.add('active-dot'):spans[i].classList.remove('active-dot');
+  }
+}
+
+
+change_project_number()
 changeIcons();
 
 right_slider_button.addEventListener("click", function () {
@@ -72,7 +89,7 @@ right_slider_button.addEventListener("click", function () {
     counter = 0;
     image_slider.src = projectSrc[counter];
   }
-
+  change_project_number()
   changeIcons();
   //animation: name duration timing-function delay iteration-count direction fill-mode;
   if (first) {
@@ -94,7 +111,7 @@ left_slider_button.addEventListener("click", function () {
     image_slider.src = projectSrc[counter];
   }
   changeIcons();
-
+  change_project_number()
   if (first) {
     image_slider.style.cssText =
       "animation: image-fade-1 0.5s ease 0s alternate forwards;";

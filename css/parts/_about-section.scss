@@ -2,7 +2,7 @@
   width: 100%;
   height: fit-content;
   padding: 70px 0px 0px 0px;
-  background-color: #000000;
+  background-color: #434040;
   border-bottom: 5px solid white;
   overflow: hidden;
 
@@ -12,7 +12,7 @@
     align-items: center;
     width: 10%;
     height: fit-content;
-    margin: 0px auto;
+    margin: 10px auto;
 
     & img {
       filter: invert(100%);
@@ -22,8 +22,9 @@
   }
 
   & .about-header {
+    $main-color: #4a86d7;
     font-weight: bold;
-    color: rgb(255, 215, 0);
+    color: $main-color;
     width: 60%;
     line-height: 80%;
     font-size: 8rem;
@@ -32,66 +33,111 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #ebc644;
   }
 
   & div#about-container {
     position: relative;
-    display: flex;
-    justify-content: space-between;
-    background-color: #ebc644;
     width: 100%;
     height: fit-content;
-    text-align: start;
-    font-size: 20px;
-    color: white;
     overflow: clip;
     overflow-y: visible;
     z-index: 0;
-    padding: 0px 5% 0% 5%;
-    background-color: black;
 
-    // & div#text-about-container {
-    //   height: fit-content;
-    //   width: 60%;
-    //   margin-top: 300px;
-    //   background-color: transparent;
-    //   border-radius: 50% 50% 0% 0%;
-    // }
-
-    h1 {
-      font-size: 3rem;
-      color: black;
-    }
-    h2 {
-      font-size: 1.3rem;
-    }
-
-    & p {
-      width: 80%;
+    & div#details {
+      $main-color: #4a86d7;
+      position: relative;
+      z-index: 99999;
+      display: flex;
+      justify-content: start;
+      flex-direction: column;
+      background-color: $main-color;
+      width: 60%;
+      padding: 5% 5% 5% 5%;
+      margin: 10% auto 5% auto;
       height: fit-content;
+      text-align: start;
+      color: white;
+      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.297);
+
+      & div#cars-div {
+        position: absolute;
+        width: 100%;
+        height: fit-content;
+        top: 0%;
+        left: 0%;
+        transform: translateY(-80%);
+        overflow: hidden;
+
+        & img#sport-car {
+          position: relative;
+          width: 50px;
+          top: -1%;
+          left: 0%;
+          animation: car_move 10s linear 0s infinite forwards;
+        }
+
+        & img.polic-car {
+          position: relative;
+          width: 50px;
+          top: -1%;
+          left: -30%;
+        }
+        & img#police-car1 {
+          animation: car_move 10s linear 0.3s infinite forwards;
+        }
+        & img#police-car2 {
+          animation: car_move 10s linear 1.5s infinite forwards;
+        }
+        & img#police-car3 {
+          animation: car_move 10s linear 1s infinite forwards;
+        }
+        & img#police-helicopter {
+          rotate: 20deg;
+          margin-bottom: 20px;
+          animation: helicopter_move 10s linear 3s infinite forwards;
+        }
+      }
+
+      h1 {
+        position: relative;
+        z-index: 9999;
+        font-size: 3rem;
+        font-weight: bold;
+        color: #434040;
+        margin: 3% 0%;
+      }
+
+      h2 {
+        z-index: 9999;
+        font-size: 1.3rem;
+      }
+
+      & p {
+        width: 50%;
+        height: fit-content;
+      }
     }
   }
 }
 
-#text-about-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  rotate: 180deg;
-  overflow: hidden;
-  line-height: 0;
+@keyframes car_move {
+  0% {
+    top: -1%;
+    left: -60%;
+  }
+  100% {
+    top: 0%;
+    left: 300%;
+  }
 }
 
-#text-about-container svg {
-  position: relative;
-  display: block;
-  width: calc(174% + 1.3px);
-  height: 198px;
-  transform: rotateY(180deg);
-}
-
-#text-about-container .shape-fill {
-  fill: #ffffff;
+@keyframes helicopter_move {
+  0% {
+    top: 0%;
+    left: -60%;
+  }
+  100% {
+    top: 0%;
+    left: 300%;
+  }
 }

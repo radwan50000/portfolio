@@ -321,7 +321,6 @@ section#projects-section {
   overflow: hidden;
   position: relative;
   border-top: 10px solid #6eb62e;
-  border-bottom: 10px solid #ffffff;
   background-color: black;
   background-image: url("../../images/sky-background.jpg");
   background-position: right center;
@@ -387,6 +386,7 @@ section#projects-section #projects-container img#project-1-BL {
 section#projects-section #projects-container img#project-2-UR {
   top: -30%;
   right: 10%;
+  animation: swim 4s linear 0s infinite forwards;
 }
 section#projects-section #projects-container img#project-2-UL {
   top: -30%;
@@ -419,9 +419,9 @@ section#projects-section #projects-container img#project-3-BL {
 section#projects-section #projects-container div#active-slider {
   position: relative;
   width: 80%;
-  height: -moz-fit-content;
-  height: fit-content;
+  height: min-content-5px;
   margin: 50px 0px;
+  background-color: transparent;
 }
 section#projects-section #projects-container div#active-slider span#right-slider-button {
   top: 50%;
@@ -458,6 +458,27 @@ section#projects-section #projects-container div#active-slider span.slider-butto
 }
 section#projects-section #projects-container div#active-slider img#active-image-slider {
   width: 100%;
+  height: 100%;
+}
+section#projects-section #projects-container div#active-slider div#project-number {
+  position: absolute;
+  bottom: -5%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.276);
+  display: flex;
+  padding: 7px 8px;
+  border-radius: 10%;
+}
+section#projects-section #projects-container div#active-slider div#project-number span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #7c7c7c;
+  display: block;
+}
+section#projects-section #projects-container div#active-slider div#project-number span:not(:last-child) {
+  margin-right: 5px;
 }
 
 img.slider-decoration {
@@ -465,6 +486,29 @@ img.slider-decoration {
   position: absolute;
   z-index: 9999;
   transition: 0.4s;
+  animation: swim 4s linear 0s infinite forwards;
+}
+
+.active-dot {
+  background-color: white !important;
+}
+
+.active-icon-TR {
+  top: 10% !important;
+  animation-delay: 1s !important;
+}
+
+.active-icon-TL {
+  top: 3% !important;
+}
+
+.active-icon-BR {
+  right: 3% !important;
+}
+
+.active-icon-BL {
+  left: 3% !important;
+  animation-delay: 1s !important;
 }
 
 @keyframes image-fade-1 {
@@ -483,28 +527,41 @@ img.slider-decoration {
     opacity: 100%;
   }
 }
-.active-icon-TR {
-  top: 0% !important;
+@keyframes swim {
+  0% {
+    transform: translate(0%, 5%);
+  }
+  15% {
+    transform: translate(5%, 2%);
+  }
+  30% {
+    transform: translate(5%, 0%);
+  }
+  40% {
+    transform: translate(5%, -2%);
+  }
+  50% {
+    transform: translate(0%, -5%);
+  }
+  65% {
+    transform: translate(-2%, -3%);
+  }
+  80% {
+    transform: translate(-5%, 0%);
+  }
+  90% {
+    transform: translate(-3%, 2%);
+  }
+  100% {
+    transform: translate(0%, 5%);
+  }
 }
-
-.active-icon-TL {
-  top: 0% !important;
-}
-
-.active-icon-BR {
-  right: 3% !important;
-}
-
-.active-icon-BL {
-  left: 3% !important;
-}
-
 #about-section {
   width: 100%;
   height: -moz-fit-content;
   height: fit-content;
   padding: 70px 0px 0px 0px;
-  background-color: #000000;
+  background-color: #434040;
   border-bottom: 5px solid white;
   overflow: hidden;
 }
@@ -515,7 +572,7 @@ img.slider-decoration {
   width: 10%;
   height: -moz-fit-content;
   height: fit-content;
-  margin: 0px auto;
+  margin: 10px auto;
 }
 #about-section #about-icon-container img {
   filter: invert(100%);
@@ -524,7 +581,7 @@ img.slider-decoration {
 }
 #about-section .about-header {
   font-weight: bold;
-  color: rgb(255, 215, 0);
+  color: #4a86d7;
   width: 60%;
   line-height: 80%;
   font-size: 8rem;
@@ -534,60 +591,107 @@ img.slider-decoration {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #ebc644;
 }
 #about-section div#about-container {
   position: relative;
-  display: flex;
-  justify-content: space-between;
-  background-color: #ebc644;
   width: 100%;
   height: -moz-fit-content;
   height: fit-content;
-  text-align: start;
-  font-size: 20px;
-  color: white;
   overflow: clip;
   overflow-y: visible;
   z-index: 0;
-  padding: 0px 5% 0% 5%;
-  background-color: black;
 }
-#about-section div#about-container h1 {
+#about-section div#about-container div#details {
+  position: relative;
+  z-index: 99999;
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+  background-color: #4a86d7;
+  width: 60%;
+  padding: 5% 5% 5% 5%;
+  margin: 10% auto 5% auto;
+  height: -moz-fit-content;
+  height: fit-content;
+  text-align: start;
+  color: white;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.297);
+}
+#about-section div#about-container div#details div#cars-div {
+  position: absolute;
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+  top: 0%;
+  left: 0%;
+  transform: translateY(-80%);
+  overflow: hidden;
+}
+#about-section div#about-container div#details div#cars-div img#sport-car {
+  position: relative;
+  width: 50px;
+  top: -1%;
+  left: 0%;
+  animation: car_move 10s linear 0s infinite forwards;
+}
+#about-section div#about-container div#details div#cars-div img.polic-car {
+  position: relative;
+  width: 50px;
+  top: -1%;
+  left: -30%;
+}
+#about-section div#about-container div#details div#cars-div img#police-car1 {
+  animation: car_move 10s linear 0.3s infinite forwards;
+}
+#about-section div#about-container div#details div#cars-div img#police-car2 {
+  animation: car_move 10s linear 1.5s infinite forwards;
+}
+#about-section div#about-container div#details div#cars-div img#police-car3 {
+  animation: car_move 10s linear 1s infinite forwards;
+}
+#about-section div#about-container div#details div#cars-div img#police-helicopter {
+  rotate: 20deg;
+  margin-bottom: 20px;
+  animation: helicopter_move 10s linear 3s infinite forwards;
+}
+#about-section div#about-container div#details h1 {
+  position: relative;
+  z-index: 9999;
   font-size: 3rem;
-  color: black;
+  font-weight: bold;
+  color: #434040;
+  margin: 3% 0%;
 }
-#about-section div#about-container h2 {
+#about-section div#about-container div#details h2 {
+  z-index: 9999;
   font-size: 1.3rem;
 }
-#about-section div#about-container p {
-  width: 80%;
+#about-section div#about-container div#details p {
+  width: 50%;
   height: -moz-fit-content;
   height: fit-content;
 }
 
-#text-about-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  rotate: 180deg;
-  overflow: hidden;
-  line-height: 0;
+@keyframes car_move {
+  0% {
+    top: -1%;
+    left: -60%;
+  }
+  100% {
+    top: 0%;
+    left: 300%;
+  }
 }
-
-#text-about-container svg {
-  position: relative;
-  display: block;
-  width: calc(174% + 1.3px);
-  height: 198px;
-  transform: rotateY(180deg);
+@keyframes helicopter_move {
+  0% {
+    top: 0%;
+    left: -60%;
+  }
+  100% {
+    top: 0%;
+    left: 300%;
+  }
 }
-
-#text-about-container .shape-fill {
-  fill: #ffffff;
-}
-
 @media (max-width: 600px) {
   header {
     padding: 10px 10px !important;
