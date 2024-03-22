@@ -1,6 +1,7 @@
 #canvasContainer {
   position: relative;
   z-index: 1;
+  border-top: 5px solid #101028;
   width: fit-content;
   height: fit-content;
 
@@ -8,7 +9,7 @@
     width: 100%;
     background-color: #000000;
     overflow: hidden;
-    margin: 9rem 0px;
+    margin: 0px 0px 9rem 0px;
     cursor: crosshair;
   }
 }
